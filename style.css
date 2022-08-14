@@ -1,0 +1,36 @@
+
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px
+}
+
+.grid {
+
+    background-color: white;
+    border: 1px solid black;
+    
+}
+
+.gridContainer {
+
+  margin-top: 25px;
+  margin-right: 40px;
+  display: inline-grid;
+  grid-template-columns: repeat(16, 2fr);
+  grid-template-rows: repeat(16, 2fr);
+  border: 5px solid black;
+  border-radius: 5px;
+  height: 575px;
+  width: 575px;
+
+}
