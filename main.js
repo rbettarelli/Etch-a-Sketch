@@ -6,6 +6,9 @@ const reset = document.querySelector('.reset');
 const range = document.querySelector("#range")
 const rangeReturn = document.querySelector('.rangeReturn');
 const rangeValue = document.getElementById('range')
+const rainbowbtn = document.querySelector('.rainbow');
+const cool = document.querySelector('.cool');
+const warm = document.querySelector('.warm');
 
 
 
@@ -15,6 +18,7 @@ function randomColor() {
     return randomColor
 
 }
+
 
 
 
@@ -45,7 +49,7 @@ reset.addEventListener('click', function () {
     let cell = grid.children;
     for (let i = 0; i < val * val; i++) {
         cell[i].style.backgroundColor = 'white'
-        
+
     }
 })
 
@@ -85,6 +89,36 @@ color.addEventListener('input', function () {
     }
 
 })
+
+rainbowbtn.addEventListener('click', function () {
+    let colorSelection = 0
+    let val = rangeValue.value
+    let cell = grid.children;
+    for (let i = 0; i < val * val; i++) {
+
+        cell[i].addEventListener('mouseover', function (e) {
+            let colours = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red'];
+            if(colorSelection > colours.length - 1){colorSelection = 0};
+            e.target.style.backgroundColor = colours[colorSelection];
+            colorSelection++;
+
+        })
+}
+})
+
+
+function rainbow(e) {
+
+    const colours = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    if (colorSelection > colours.length - 1) { colorSelection = 0 };
+    e.target.style.backgroundColor = colours[colorSelection];
+    colorSelection++;
+
+
+
+
+
+}
 
 
 createGrid = () => {
