@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,29 +8,54 @@
     <title>Etch a Sketch</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class='title'>
-        <h1> Etch a Sketch</h1>
-    </div>
-    <div class="buttons">
-        <button class="reset">Reset</button>
-        <button class="black">Black</button>
-        <button class="random">Random</button>
 
-        <input type="color" id="color">
-
-        <input type="range" min="2" max="100"  id="range" value="16">
-        <p class="rangeReturn">16</p>
-
-    </div>
-    <div class="gridContainer">
-        <div class="grid"> </div>
-
+    <div class="title">
+        <h1>Etch a Sketch</h1>
     </div>
 
-    <footer>made by <a href="https://github.com/rbettarelli">rbettarelli</a></footer>
-    
+
+    <div class="body">
+        <div class="buttons">
+            <button class="reset">Reset</button>
+            <button class="black">Black</button>
+            <button class="random">Random</button>
+        </div>
+        <div class="buttons2">
+            <button>rainbow</button>
+            <button>Warm</button>
+            <button>Cool</button>
+            <input type="color" id="color">
+        </div>
+
+
+
+
+        <div class="gridSelector">
+            <div class="gridContainer">
+                <div class="grid"> </div>
+            </div>
+            <div class="rangeSelector">
+                <input type="range" min="2" max="100" id="range" value="16">
+                <p class="rangeReturn">16</p>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
     <script src="main.js"></script>
 </body>
+
 </html>

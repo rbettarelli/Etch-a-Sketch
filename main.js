@@ -45,6 +45,7 @@ reset.addEventListener('click', function () {
     let cell = grid.children;
     for (let i = 0; i < val * val; i++) {
         cell[i].style.backgroundColor = 'white'
+        
     }
 })
 
