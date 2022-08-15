@@ -7,7 +7,7 @@ const range = document.querySelector("#range")
 const rangeReturn = document.querySelector('.rangeReturn');
 const rangeValue = document.getElementById('range')
 const rainbowbtn = document.querySelector('.rainbow');
-const cool = document.querySelector('.cool');
+const cold = document.querySelector('.cold');
 const warm = document.querySelector('.warm');
 
 
@@ -105,20 +105,40 @@ rainbowbtn.addEventListener('click', function () {
         })
 }
 })
+warm.addEventListener('click', function () {
+    let colorSelection = 0
+    let val = rangeValue.value
+    let cell = grid.children;
+    for (let i = 0; i < val * val; i++) {
 
+        cell[i].addEventListener('mouseover', function (e) {
+            let colours = ['#BF6A6D', '#A45256', '#EC6760', '#F88C5D', '#FDCF6D'];
+            if(colorSelection > colours.length - 1){colorSelection = 0};
+            e.target.style.backgroundColor = colours[colorSelection];
+            colorSelection++;
 
-function rainbow(e) {
-
-    const colours = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-    if (colorSelection > colours.length - 1) { colorSelection = 0 };
-    e.target.style.backgroundColor = colours[colorSelection];
-    colorSelection++;
-
-
-
-
-
+        })
 }
+})
+
+cold.addEventListener('click', function () {
+    let colorSelection = 0
+    let val = rangeValue.value
+    let cell = grid.children;
+    for (let i = 0; i < val * val; i++) {
+
+        cell[i].addEventListener('mouseover', function (e) {
+            let colours = ['#5590BC', '#0DABB8', '#01F0F6', '#1FFDE1', '#57FFC8'];
+            if(colorSelection > colours.length - 1){colorSelection = 0};
+            e.target.style.backgroundColor = colours[colorSelection];
+            colorSelection++;
+
+        })
+}
+})
+
+
+
 
 
 createGrid = () => {
@@ -142,3 +162,5 @@ createGrid()
 
 
 
+// warm 
+// cold  
