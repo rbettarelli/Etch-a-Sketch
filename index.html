@@ -16,38 +16,45 @@
         <h1>Etch a Sketch</h1>
     </div>
 
-
     <div class="body">
-        <div class="buttons">
-            <button class="reset">Reset</button>
-            <button class="black">Black</button>
-            <button class="random">Random</button>
+
+        <div class="sliderBox">
+            <input type="range" min="2" max="100" id="range" value="16">
+            <p class="rangeReturn"> 16 </p>
         </div>
-        <div class="buttons2">
-            <button class="rainbow">Rainbow</button>
-            <button class="warm">Warm</button>
-            <button class="cold">Cold</button>
-            <input type="color" id="color">
-        </div>
-
-
-
 
         <div class="gridSelector">
             <div class="gridContainer">
                 <div class="grid"> </div>
+
             </div>
-            <div class="rangeSelector">
-                <input type="range" min="2" max="100" id="range" value="16">
-                <p class="rangeReturn">16</p>
+
+
+            <div class="controls">
+
+
+                <button class="black">Black</button>
+                <button class="random">Random</button>
+
+                <div class="colorBox">
+                    <input type="color" id="color">
+                </div>
+
+
+                <button class="rainbow">Rainbow</button>
+                <button class="warm">Warm</button>
+                <button class="cold">Cold</button>
+
+
+
+
+                <button class="reset">Reset</button>
+
+
+
 
             </div>
         </div>
-
-
-
-
-
     </div>
 
 

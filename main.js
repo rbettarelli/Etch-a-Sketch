@@ -10,6 +10,54 @@ const rainbowbtn = document.querySelector('.rainbow');
 const cold = document.querySelector('.cold');
 const warm = document.querySelector('.warm');
 
+const DEFAULT_MODE = ''
+let currentMode = DEFAULT_MODE
+
+
+black.onclick = () => setCurrentMode('black')
+rainbowbtn.onclick = () => setCurrentMode('rainbow')
+random.onclick = () => setCurrentMode('random')
+reset.onclick = () => setCurrentMode('reset')
+warm.onclick = () => setCurrentMode('warm')
+cold.onclick = () => setCurrentMode('cold')
+
+function setCurrentMode(newMode) {
+    activateButton(newMode)
+    currentMode = newMode
+}
+
+window.onload = () => {
+
+    activateButton(DEFAULT_MODE)
+
+}
+
+function activateButton(newMode) {
+    if (currentMode === 'rainbow') {
+        rainbowbtn.classList.remove('active')
+    } else if (currentMode === 'black') {
+        black.classList.remove('active')
+    } else if (currentMode === 'warm') {
+        warm.classList.remove('active')
+    } else if (currentMode === 'cold') {
+        cold.classList.remove('active')
+    } else if (currentMode === 'random') {
+        random.classList.remove('active')
+    }   
+
+    if (newMode === 'rainbow') {
+        rainbowbtn.classList.add('active')
+    } else if (newMode === 'black') {
+        black.classList.add('active')
+    } else if (newMode === 'warm') {
+        warm.classList.add('active')
+    } else if (newMode === 'cold') {
+        cold.classList.add('active')
+    }else if (newMode === 'random') {
+        random.classList.add('active')
+    }   
+}
+
 
 
 function randomColor() {
@@ -48,8 +96,10 @@ reset.addEventListener('click', function () {
     let val = rangeValue.value
     let cell = grid.children;
     for (let i = 0; i < val * val; i++) {
-        cell[i].style.backgroundColor = 'white'
-
+        cell[i].style.backgroundColor = 'white';
+        cell[i].addEventListener('mouseover', function (e) {
+            e.target.style.backgroundColor = 'white';
+        })
     }
 })
 
@@ -98,12 +148,12 @@ rainbowbtn.addEventListener('click', function () {
 
         cell[i].addEventListener('mouseover', function (e) {
             let colours = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red'];
-            if(colorSelection > colours.length - 1){colorSelection = 0};
+            if (colorSelection > colours.length - 1) { colorSelection = 0 };
             e.target.style.backgroundColor = colours[colorSelection];
             colorSelection++;
 
         })
-}
+    }
 })
 warm.addEventListener('click', function () {
     let colorSelection = 0
@@ -113,12 +163,12 @@ warm.addEventListener('click', function () {
 
         cell[i].addEventListener('mouseover', function (e) {
             let colours = ['#BF6A6D', '#A45256', '#EC6760', '#F88C5D', '#FDCF6D'];
-            if(colorSelection > colours.length - 1){colorSelection = 0};
+            if (colorSelection > colours.length - 1) { colorSelection = 0 };
             e.target.style.backgroundColor = colours[colorSelection];
             colorSelection++;
 
         })
-}
+    }
 })
 
 cold.addEventListener('click', function () {
@@ -129,12 +179,12 @@ cold.addEventListener('click', function () {
 
         cell[i].addEventListener('mouseover', function (e) {
             let colours = ['#5590BC', '#0DABB8', '#01F0F6', '#1FFDE1', '#57FFC8'];
-            if(colorSelection > colours.length - 1){colorSelection = 0};
+            if (colorSelection > colours.length - 1) { colorSelection = 0 };
             e.target.style.backgroundColor = colours[colorSelection];
             colorSelection++;
 
         })
-}
+    }
 })
 
 
@@ -162,5 +212,3 @@ createGrid()
 
 
 
-// warm 
-// cold  
