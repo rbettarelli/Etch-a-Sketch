@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d507937b83.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,36 +19,23 @@
 
     <div class="body">
 
-        <div class="sliderBox">
-            <input type="range" min="2" max="100" id="range" value="16">
-            <p class="rangeReturn"> 16 </p>
-        </div>
-
+        
+            
+           
         <div class="gridSelector">
-            <div class="gridContainer">
-                <div class="grid"> </div>
-
-            </div>
-
-
+            <div class="gridContainer"> </div>
             <div class="controls">
 
-
+                
+                <div class="rangeReturn"> 16 </div>
+                <input type="range" min="2" max="100" id="range" value="16">
+                <div class="label"><input type="color" id="color"><label for="color">Select Color</label></div>
                 <button class="black">Black</button>
                 <button class="random">Random</button>
-
-                <div class="colorBox">
-                    <input type="color" id="color">
-                </div>
-
-
+                
                 <button class="rainbow">Rainbow</button>
                 <button class="warm">Warm</button>
                 <button class="cold">Cold</button>
-
-
-
-
                 <button class="reset">Reset</button>
 
 
@@ -59,7 +47,18 @@
 
 
 
-
+    <footer>
+        <p>
+            Copyright ©
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            
+        </p>
+        <a href="https://github.com/michalosman" target="_blank">
+            rbettarelli 
+            <i class="fab fa-github"></i></a>
+    </footer>
 
 
     <script src="main.js"></script>
